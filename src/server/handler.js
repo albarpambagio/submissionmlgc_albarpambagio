@@ -1,5 +1,6 @@
 const predictClassification = require('../services/inferenceService');
 const Boom = require('@hapi/boom');
+const storeData = require('../services/storeData');
 
 async function postPredictHandler(request, h) {
     try {
@@ -17,6 +18,8 @@ async function postPredictHandler(request, h) {
             createdAt
         };
 
+        await storeData(id, data);
+        
         return h.response({
             status: 'success',
             message: 'Model is predicted successfully',
