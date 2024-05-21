@@ -1,6 +1,8 @@
 const predictClassification = require('../services/inferenceService');
 const Boom = require('@hapi/boom');
 const storeData = require('../services/storeData');
+const crypto = require('crypto');
+
 
 async function postPredictHandler(request, h) {
     try {
