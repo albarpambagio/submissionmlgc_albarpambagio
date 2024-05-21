@@ -1,4 +1,5 @@
 node_modules/
+packagae-lock.json
 model/
 firestore/
-.env/
+.env
